@@ -42,7 +42,7 @@ if ((guessesLeft > 0) && (userGuess != computerGuess)) {
 
 
 
-directionsText.textContent = "";
+directionsText.textContent = "Guess what letter I'm thinking of";
 winsText.textContent = "Wins: " + wins;
 lossesText.textContent = "Losses: " + losses;
 guessesLeftText.textContent = "Guesses Left: " + guessesLeft;
