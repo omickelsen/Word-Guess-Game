@@ -14,7 +14,11 @@ var winsText = document.getElementById("wins-text");
 var lossesText = document.getElementById("losses-text");
 var guessesLeftText = document.getElementById("guessesLeft-text");
 var guessedLettersText = document.getElementById("guessedLetters-text");
-
+//reset function
+var reset = function() {
+guessesLeft = 9;
+guessedLetters = [];
+}
 //formula for user guess
 
 document.onkeyup = function(event) {
@@ -24,9 +28,17 @@ console.log("user guess: " + userGuess);
 var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 console.log("computer guess: " + computerGuess);
 
-if ((userGuess === computerGuess)){
+if ((guessesLeft > 0) && (userGuess != computerGuess)) {
+    guessesLeft--;
+    guessedLetters++;
+} else if (userGuess === computerGuess){
     wins++;
+    reset();
+} else {
+    losses++;
+    reset();
 }
+
 
 
 
