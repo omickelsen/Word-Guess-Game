@@ -29,7 +29,7 @@ document.onkeyup = function (event) {
     var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
     console.log("computer guess: " + computerGuess);
     // the if else statments with the added .push to count the letters in the array.
-    if ((guessesLeft > 0) && (userGuess != computerGuess)) {
+    if ((guessesLeft > 1) && (userGuess != computerGuess)) {
         guessesLeft--;
         guessedLetters.push(userGuess);
         console.log(typeof (guessedLetters));
