@@ -28,16 +28,18 @@ document.onkeyup = function (event) {
     //Computer has a random guess
     var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
     console.log("computer guess: " + computerGuess);
-
+    // the if else statments with the added .push to count the letters in the array.
     if ((guessesLeft > 0) && (userGuess != computerGuess)) {
         guessesLeft--;
         guessedLetters.push(userGuess);
         console.log(typeof(guessedLetters));
     } else if (userGuess === computerGuess) {
         wins++;
+        console.log("winner")
         reset();
     } else {
         losses++;
+        console.log("loser")
         reset();
     }
 
