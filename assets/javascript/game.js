@@ -14,9 +14,13 @@ var winCounter = 0;
 var lossCounter = 0;
 var numGuesses = 12;
 //Sound variables
-var myMusic;
-var mySound;
-var themeMusic;
+var myMusic = document.getElementById("myMusic");
+var myStartSound = document.getElementById("myStartSound");
+var myWinSound = document.getElementById("myWinSound");
+var myLoseSound = document.getElementById("myLoseSound");
+var themeMusic = document.getElementById("themeMusic");
+
+
 //alphabet array
 var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
     'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
@@ -126,6 +130,7 @@ function round() {
 
     // If we have gotten all the letters to match the solution... 
     if (currentLetters.toString() == blanksAndSuccess.toString()) {
+        victory();
         winCounter++; // add to the win counter 
         document.getElementById("word").innerHTML = "The last word was " + currentWord;
         //TODO set up event.preventDefault() on alert so that the current word is shown on the game screen
@@ -133,10 +138,12 @@ function round() {
         // Update the win counter in the HTML
         document.getElementById("winCounter").innerHTML = "You have won " + winCounter + " game(s)";
         startGame(); // restart the game 
+        
     }
 
     // If we've run out of guesses
     else if (numGuesses == 0) {
+        loser();
         lossCounter++; // add to the loss counter 
         document.getElementById("word").innerHTML = "The last word was " + currentWord;
         alert("You lose. The word was " + currentWord); // gives the user an alert
@@ -149,3 +156,18 @@ function round() {
 //Calling the startGame function
 document.getElementById("gameStart").onclick = function() { buttons() };
 startGame();
+playball();
+
+function victory() {
+myWinSound.play();
+
+}
+
+function loser() {
+    myLoseSound.play();
+}
+
+function playball() {
+    myStartSound.play();
+    myMusic.play();
+}
