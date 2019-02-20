@@ -165,9 +165,12 @@ myWinSound.play();
 
 function loser() {
     myLoseSound.play();
+    console.log(loser);
 }
 
 function playball() {
     myStartSound.play();
     myMusic.play();
+    console.log(playball);
 }
+
