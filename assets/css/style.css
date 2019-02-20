@@ -12,6 +12,8 @@ body {
     background-image:url(../images/./Halo-5-Guardians-HD-wallpaper.jpg);
     background-repeat: repeat;
     background-size: cover;
+    min-height: 100vh;
+    
 
 }
 
@@ -40,5 +42,15 @@ body {
 .btn-primary {
     background-color: #ff000054;
     border-color: black;
+
+}
+
+.footer {
+    position: sticky;
+    text-align: center;
+    margin-top: 150px;
+    clear: both;
+    color: #ff000054;
+
 
 }

@@ -1,5 +1,5 @@
 //Made the variables first to use in the functions
-//Array of fruitwords
+//Array of randomwords
 var randomWords = ['butter', 'grandpa', 'television', 'sclouns', 'hangman', 'love', 'tacos', 'pneumonoultramicroscopicsilicovolcanoconiosis',
     'texas', 'utah', 'california', 'halo', 'apex', 'predator', 'evil', 'vaccine',
     'doctor', 'elk', 'gorilla', 'lion', 'bottle', 'crossfit', 'javascript', 'xbox', 'nintendo', 'balloon',
@@ -36,7 +36,7 @@ function startGame() {
     blanksAndSuccess = [];
     guessedLetter = [];
     incorrectGuess = [];
-    //Selects a fruitword at random
+    //Selects a randomword at random
     currentWord = randomWords[Math.floor(Math.random() * randomWords.length)];
 
     //Splits the current word into letters, so that you can match the users guesses to the letters of the word
