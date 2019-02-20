@@ -1,30 +1,79 @@
 <!DOCTYPE html>
-<html> 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Psychic Game</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./assets/css/reset.css">
-        
-        
-    </head>
-    <body>
-        <!-- This is the ID's for the game, Java script is in the other file. -->
-        <h1>The Psychic Game</h1>
-            <div id="game">
-                <p id="directions-text">
-                    Guess what letter I'm thinking of
-                </p>
+<html>
 
-                <p id="wins-text">Wins: 0</p>
-                <p id="losses-text">Losses: 0</p>
-                <p id="guessesLeft-text">Guesses Left: 9</p>
-                <p id="guessedLetters-text">Guesses Made:</p>
-        
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Word Guess Game</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./assets/./css/reset.css">
+    <link rel="stylesheet" href="./assets/./images/Halo-5-Guardians-HD-wallpaper.jpg">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/./css/./style.css">
+</head>
+
+<body>
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <div class="jumbotron primary">
+            <div class="container">
+                <h1>Awesome <br> Word Guess Game</h1>
             </div>
-        
-        <script src="./assets/javascript/psychicGame.js" async defer></script>
-    </body>
+        </div>
+
+        <div class="scoreBoard">
+            <ul class="list-group">
+                <li class="list-group-item active">
+                    <p class="center"><button class="btn btn-default" id="gameStart">Start Game</button></p>
+                </li>
+                <li class="list-group-item">
+                    <p id="currentWord">Find the missing letters: </p>
+                </li>
+            </ul>
+            <ul class="list-group col-md-6">
+                <li class="list-group-item">
+                    <p id="guessesRemaining">Number Of Guesses Remaining:</p>
+                </li>
+                <li class="list-group-item">
+                    <p id="guessed">Letters Already Guessed:</p>
+                </li>
+                <li class="list-group-item">
+                    <p id="winCounter">Wins</p>
+
+                    <p id="lossCounter">Losses</p>
+                    <p id="word"></p>
+                </li>
+            </ul>
+            <div id="alphabet-btns" class="col-md-6">
+                <h3>Make a guess</h3>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <div class="col-md-2"></div>
+
+
+    <div class="col-md-12">
+        <footer class="footer">
+
+        </footer>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="./assets/./javascript/game.js" async defer></script>
+</body>
+
 </html>

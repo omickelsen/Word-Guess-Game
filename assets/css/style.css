@@ -1,0 +1,44 @@
+
+
+h1 {
+    font-size: 3rem;
+    font-family: 'Play', sans-serif;
+}
+
+
+
+
+body {
+    background-image:url(../images/./Halo-5-Guardians-HD-wallpaper.jpg);
+    background-repeat: repeat;
+    background-size: cover;
+
+}
+
+.jumbotron {
+    opacity: .9;
+    color: black;
+    background-color: #82565300;
+
+
+}
+
+.scoreBoard {
+    opacity: .8;
+}
+
+.list-group-item.active {
+    background-color: #ff000069;
+    border-color: black;
+}
+
+.btn {
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.btn-primary {
+    background-color: #ff000054;
+    border-color: black;
+
+}
