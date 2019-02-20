@@ -170,7 +170,7 @@ function loser() {
 
 function playball() {
     myStartSound.play();
-    myMusic.play();
+    // myMusic.play();
     console.log(playball);
 }
 
