@@ -8,7 +8,7 @@ var wins = 0;
 var losses = 0;
 var guessesLeft = 9;
 var guessedLetters = [];
-console.log(typeof(guessedLetters))
+console.log(typeof (guessedLetters))
 
 var directionsText = document.getElementById("directions-text");
 var winsText = document.getElementById("wins-text");
@@ -32,7 +32,7 @@ document.onkeyup = function (event) {
     if ((guessesLeft > 0) && (userGuess != computerGuess)) {
         guessesLeft--;
         guessedLetters.push(userGuess);
-        console.log(typeof(guessedLetters));
+        console.log(typeof (guessedLetters));
     } else if (userGuess === computerGuess) {
         wins++;
         console.log("winner")
