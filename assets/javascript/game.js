@@ -2,7 +2,7 @@
 //Array of fruitwords
 var randomWords = ['butter', 'grandpa', 'television', 'sclouns', 'hangman', 'love', 'tacos', 'pneumonoultramicroscopicsilicovolcanoconiosis',
     'texas', 'utah', 'california', 'halo', 'apex', 'predator', 'evil', 'vaccine',
-    'doctor', 'elk', 'gorilla', 'lion', 'bottle', 'crossfit', 'javascript', 'xbox', 'nintendo', 'baloon',
+    'doctor', 'elk', 'gorilla', 'lion', 'bottle', 'crossfit', 'javascript', 'xbox', 'nintendo', 'balloon',
     'backpack', 'chair', 'trump'
 ];
 var blanksAndSuccess = []; //Correct guesses and blanks will be in this array
@@ -13,7 +13,11 @@ var currentLetters = [];
 var winCounter = 0;
 var lossCounter = 0;
 var numGuesses = 12;
-
+//Sound variables
+var myMusic;
+var mySound;
+var themeMusic;
+//alphabet array
 var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
     'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
 ];
