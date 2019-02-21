@@ -32,7 +32,7 @@ var guessedLetter = [];
 var correctLetter = [];
 //guessed letters that are incorrect
 var incorrectGuess = [];
-
+startGame();
 
 //Below is the functionality of the game
 function startGame() {
@@ -40,6 +40,17 @@ function startGame() {
     blanksAndSuccess = [];
     guessedLetter = [];
     incorrectGuess = [];
+    // myMusic = new sound("./assets/Sounds/Halo Remix.mp3");
+    // myMusic = new Audio("../Sounds/Halo Remix.mp3");
+    myMusic.play()
+    .then(function(){
+        console.log("ahhhhh");
+        
+    })
+    .catch(function(err){
+        console.log(err);
+    })
+    console.log(myMusic);
     //Selects a randomword at random
     currentWord = randomWords[Math.floor(Math.random() * randomWords.length)];
 
@@ -128,7 +139,7 @@ function round() {
     document.getElementById("currentWord").innerHTML = "Find the missing letters: " + blanksAndSuccess.join(" ");
     document.getElementById("guessed").innerHTML = "Letters already guessed: " + incorrectGuess.join(" ");
 
-    // If we have gotten all the letters to match the solution... 
+    // If have gotten all the letters to match the solution... 
     if (currentLetters.toString() == blanksAndSuccess.toString()) {
         victory();
         winCounter++; // add to the win counter 
@@ -141,7 +152,7 @@ function round() {
         
     }
 
-    // If we've run out of guesses
+    // If run out of guesses
     else if (numGuesses == 0) {
         loser();
         lossCounter++; // add to the loss counter 
@@ -155,8 +166,9 @@ function round() {
 
 //Calling the startGame function
 document.getElementById("gameStart").onclick = function() { buttons() };
-startGame();
-playball();
+// startGame();
+// gameMusic();
+console.log("gamestart")
 
 function victory() {
 myWinSound.play();
@@ -168,9 +180,4 @@ function loser() {
     console.log(loser);
 }
 
-function playball() {
-    myStartSound.play();
-    // myMusic.play();
-    console.log(playball);
-}
 
