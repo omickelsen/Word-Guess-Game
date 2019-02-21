@@ -40,7 +40,6 @@ function startGame() {
     blanksAndSuccess = [];
     guessedLetter = [];
     incorrectGuess = [];
-    myStartSound.play();
     myMusic.play()
         .then(function () {
             console.log("ahhhhh");
@@ -109,14 +108,14 @@ function checkLetters(letter) {
     var letterInWord = false;
     //loop that goes through the length of the word
     for (var i = 0; i < blanks; i++) {
-        if (currentWord[i] == letter) {
+        if (currentWord[i] === letter) {
             letterInWord = true;
         }
     }
     if (letterInWord) {
         for (var i = 0; i < blanks; i++) {
 
-            if (currentWord[i] == letter) {
+            if (currentWord[i] === letter) {
                 blanksAndSuccess[i] = letter
             }
         }
@@ -139,7 +138,7 @@ function round() {
     document.getElementById("guessed").innerHTML = "Letters already guessed: " + incorrectGuess.join(" ");
 
     // If have gotten all the letters to match the solution... 
-    if (currentLetters.toString() == blanksAndSuccess.toString()) {
+    if (currentLetters.toString() === blanksAndSuccess.toString()) {
         victory();
         winCounter++; // add to the win counter 
         document.getElementById("word").innerHTML = "The last word was " + currentWord;
@@ -152,7 +151,7 @@ function round() {
     }
 
     // If run out of guesses
-    else if (numGuesses == 0) {
+    else if (numGuesses === 0) {
         loser();
         lossCounter++; // add to the loss counter 
         document.getElementById("word").innerHTML = "The last word was " + currentWord;
@@ -164,9 +163,11 @@ function round() {
 }
 
 //Calling the startGame function
-document.getElementById("gameStart").onclick = function () { buttons() 
-startGame();
-console.log("gamestart")
+document.getElementById("gameStart").onclick = function () {
+    buttons()
+    startGame();
+    myStartSound.play();
+    console.log("gamestart")
 };
 
 function victory() {
