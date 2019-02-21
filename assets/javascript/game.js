@@ -32,7 +32,7 @@ var guessedLetter = [];
 var correctLetter = [];
 //guessed letters that are incorrect
 var incorrectGuess = [];
-startGame();
+
 
 //Below is the functionality of the game
 function startGame() {
@@ -40,16 +40,15 @@ function startGame() {
     blanksAndSuccess = [];
     guessedLetter = [];
     incorrectGuess = [];
-    // myMusic = new sound("./assets/Sounds/Halo Remix.mp3");
-    // myMusic = new Audio("../Sounds/Halo Remix.mp3");
+    myStartSound.play();
     myMusic.play()
-    .then(function(){
-        console.log("ahhhhh");
-        
-    })
-    .catch(function(err){
-        console.log(err);
-    })
+        .then(function () {
+            console.log("ahhhhh");
+
+        })
+        .catch(function (err) {
+            console.log(err);
+        })
     console.log(myMusic);
     //Selects a randomword at random
     currentWord = randomWords[Math.floor(Math.random() * randomWords.length)];
@@ -66,7 +65,7 @@ function startGame() {
     document.getElementById('currentWord').innerHTML = "Find the missing letters: " + blanksAndSuccess.join(" ");
     document.getElementById('guessesRemaining').innerHTML = "Guesses left: " + numGuesses;
     document.getElementById('guessed').innerHTML = "Letters already guessed: "
-        // document.getElementsByClassName('btn-primary').disabled = false;
+    // document.getElementsByClassName('btn-primary').disabled = false;
     console.log("Start");
     buttons();
 }
@@ -91,7 +90,7 @@ function buttons() {
         myButtons.appendChild(listItem);
         listItem.dataset.alphabet = alphabet[i];
 
-        listItem.onclick = function() {
+        listItem.onclick = function () {
             this.disabled = true;
             var userGuess = listItem.dataset.alphabet;
             guessedLetter.push(userGuess);
@@ -149,7 +148,7 @@ function round() {
         // Update the win counter in the HTML
         document.getElementById("winCounter").innerHTML = "You have won " + winCounter + " game(s)";
         startGame(); // restart the game 
-        
+
     }
 
     // If run out of guesses
@@ -165,13 +164,13 @@ function round() {
 }
 
 //Calling the startGame function
-document.getElementById("gameStart").onclick = function() { buttons() };
-// startGame();
-// gameMusic();
+document.getElementById("gameStart").onclick = function () { buttons() 
+startGame();
 console.log("gamestart")
+};
 
 function victory() {
-myWinSound.play();
+    myWinSound.play();
 
 }
 
@@ -179,5 +178,6 @@ function loser() {
     myLoseSound.play();
     console.log(loser);
 }
+
 
 
