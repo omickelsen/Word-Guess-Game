@@ -21,26 +21,26 @@ var myWinSound = document.getElementById("myWinSound");
 var myLoseSound = document.getElementById("myLoseSound");
 var themeMusic = document.getElementById("themeMusic");
 var audio = new Audio("./assets/Sounds/Halo theme.mp3");
-window.onload = function(){
+window.onload = function () {
     audio.play()
-    .then(function () {
-        console.log("ahhhhh");
-
-    })
-    .catch(function (err) {
-        console.log(err);
-        audio.currentTime = 1;
-        audio.play()
         .then(function () {
             console.log("ahhhhh");
-    
+
         })
         .catch(function (err) {
             console.log(err);
             audio.currentTime = 1;
             audio.play()
+                .then(function () {
+                    console.log("ahhhhh");
+
+                })
+                .catch(function (err) {
+                    console.log(err);
+                    audio.currentTime = 1;
+                    audio.play()
+                })
         })
-    })
 
 }
 
