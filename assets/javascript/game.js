@@ -15,6 +15,7 @@ var lossCounter = 0;
 var numGuesses = 12;
 //Sound variables
 var myMusic = document.getElementById("myMusic");
+console.log(myMusic + "what is going on here??");
 var myStartSound = document.getElementById("myStartSound");
 var myWinSound = document.getElementById("myWinSound");
 var myLoseSound = document.getElementById("myLoseSound");
@@ -42,6 +43,7 @@ window.onload = function(){
     })
 
 }
+
 
 //alphabet array
 var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
