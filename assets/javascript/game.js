@@ -19,7 +19,29 @@ var myStartSound = document.getElementById("myStartSound");
 var myWinSound = document.getElementById("myWinSound");
 var myLoseSound = document.getElementById("myLoseSound");
 var themeMusic = document.getElementById("themeMusic");
+var audio = new Audio("./assets/Sounds/Halo theme.mp3");
+window.onload = function(){
+    audio.play()
+    .then(function () {
+        console.log("ahhhhh");
 
+    })
+    .catch(function (err) {
+        console.log(err);
+        audio.currentTime = 1;
+        audio.play()
+        .then(function () {
+            console.log("ahhhhh");
+    
+        })
+        .catch(function (err) {
+            console.log(err);
+            audio.currentTime = 1;
+            audio.play()
+        })
+    })
+
+}
 
 //alphabet array
 var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
@@ -34,12 +56,14 @@ var correctLetter = [];
 var incorrectGuess = [];
 
 
+
 //Below is the functionality of the game
 function startGame() {
     numGuesses = 12;
     blanksAndSuccess = [];
     guessedLetter = [];
     incorrectGuess = [];
+    audio.pause();
     myMusic.play()
         .then(function () {
             console.log("ahhhhh");
@@ -143,10 +167,11 @@ function round() {
         winCounter++; // add to the win counter 
         document.getElementById("word").innerHTML = "The last word was " + currentWord;
         //TODO set up event.preventDefault() on alert so that the current word is shown on the game screen
-        alert("You win! The word was " + currentWord); // give the user an alert   
+        //alert("You win! The word was " + currentWord); // give the user an alert   
         // Update the win counter in the HTML
         document.getElementById("winCounter").innerHTML = "You have won " + winCounter + " game(s)";
-        startGame(); // restart the game 
+        setTimeout(startGame, 3000);// restart the game after 3 seconds
+        //startGame(); // restart the game 
 
     }
 
@@ -155,10 +180,11 @@ function round() {
         loser();
         lossCounter++; // add to the loss counter 
         document.getElementById("word").innerHTML = "The last word was " + currentWord;
-        alert("You lose. The word was " + currentWord); // gives the user an alert
+        //alert("You lose. The word was " + currentWord); // gives the user an alert
         // Update the loss counter in the HTML
         document.getElementById("lossCounter").innerHTML = "You have lost " + lossCounter + " game(s)";
-        startGame(); // restart the game
+        setTimeout(startGame, 3000);// restart the game after 3 seconds
+        // startGame(); // restart the game
     }
 }
 
