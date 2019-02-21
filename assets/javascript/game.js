@@ -170,7 +170,7 @@ function round() {
         //alert("You win! The word was " + currentWord); // give the user an alert   
         // Update the win counter in the HTML
         document.getElementById("winCounter").innerHTML = "You have won " + winCounter + " game(s)";
-        setTimeout(startGame, 3000);// restart the game after 3 seconds
+        setTimeout(startGame, 1000);// restart the game after 3 seconds
         //startGame(); // restart the game 
 
     }
@@ -183,7 +183,7 @@ function round() {
         //alert("You lose. The word was " + currentWord); // gives the user an alert
         // Update the loss counter in the HTML
         document.getElementById("lossCounter").innerHTML = "You have lost " + lossCounter + " game(s)";
-        setTimeout(startGame, 3000);// restart the game after 3 seconds
+        setTimeout(startGame, 1000);// restart the game after 3 seconds
         // startGame(); // restart the game
     }
 }
